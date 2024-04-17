@@ -29,7 +29,7 @@ function Product() {
     const addProduct = (event) => {
         event.preventDefault();
         console.log(product);
-        axios.post("http://localhost:9091/product/add", product).then(
+        axios.post("http://localhost:9522/product/add", product).then(
             response => {
                 console.log("response", response);
                 formRef.current.reset();
@@ -53,7 +53,7 @@ function Product() {
     }
 
     const deleteProduct = (prodId) => {
-        axios.delete("http://localhost:9091/product/delete", { data: { "id": prodId } }).then(
+        axios.delete("http://localhost:9522/product/delete", { data: { "id": prodId } }).then(
             response => {
                 console.log(response);
                 getProducts();
